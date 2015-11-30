@@ -24,7 +24,7 @@ public class WebTest extends WebUtility{
         Assert.assertTrue(HomePage.selectNavBarItem("Product Category", "Accessories"));
         Assert.assertTrue(ProductCategory.addToCart("Magic Mouse"));
         Assert.assertTrue(Checkout.proceed());
-        //Assert.assertTrue(Checkout.calculateShippingCost("Canada", "Ontario"));
+        Assert.assertFalse(Checkout.calculateShippingCost("Canada", "Ontario"));
         Assert.assertTrue(Checkout.enterDetails("billing"));
         Assert.assertTrue(Checkout.enterDetails("shipping"));
         Assert.assertTrue(Checkout.purchase());
